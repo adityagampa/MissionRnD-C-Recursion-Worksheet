@@ -21,10 +21,20 @@
 	Note : Test Cases would be small <25.
 
 */
-#include "stdafx.h"
-
-
+#include <stdio.h>
+#include <stdlib.h>
 int get_steps(int s)
 {
-	return 0;
+	int count = 0;
+	if (!s)
+		return 1;
+	if ((s - 2) >= 0)
+	{
+		count = get_steps(s - 2);
+	}
+	if ((s - 1) >= 0)
+	{
+		count += get_steps(s - 1);
+	}
+	return count;
 }
